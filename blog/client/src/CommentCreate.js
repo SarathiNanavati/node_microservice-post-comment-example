@@ -7,7 +7,7 @@ const CommentCreate = ({ postId }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await axios.post(`http://localhost:4001/posts/${postId}/comments`, {
+    await axios.post(`http://local.host/posts/${postId}/comments`, {
       content,
     });
 
@@ -16,15 +16,15 @@ const CommentCreate = ({ postId }) => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <div className='form-group'>
+        <div className="form-group">
           <label>New Comment</label>
           <input
             value={content}
             onChange={(e) => setContent(e.target.value)}
-            className='form-control'
+            className="form-control"
           />
         </div>
-        <button className='btn btn-primary'>Submit</button>
+        <button className="btn btn-primary">Submit</button>
       </form>
     </div>
   );
